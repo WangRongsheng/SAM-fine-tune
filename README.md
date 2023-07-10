@@ -25,3 +25,8 @@ Fine tuning is desirable so that we can obtain better performance on our specifi
 # Reference
 
 1. [How To Fine-Tune Segment Anything](https://encord.com/blog/learn-how-to-fine-tune-the-segment-anything-model-sam/)
+2. https://github.com/tianrun-chen/SAM-Adapter-PyTorch
+3. https://github.com/WuJunde/Medical-SAM-Adapter
+4. https://github.com/ziqi-jin/finetune-anything
+5. https://github.com/SysCV/sam-hq
+6. https://github.com/luca-medeiros/lightning-sam
