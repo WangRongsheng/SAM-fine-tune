@@ -22,6 +22,12 @@ If we tried to use this model for satellite imagery taken from a vertical perspe
 Fine tuning is desirable so that we can obtain better performance on our specific use case, without having to incur the computational cost of training a model from scratch.
 </details>
 
+<details> <summary>What is Low-Rank Adaptation (LoRA)?</summary>
+LoRA is an adapter that is using 2 matrices B and A. The 2 matrices have specific dimensions (input_size, r) and (r, input_size) . By specifying a rank r < input_size, we reduce the parameters size and try to capture the task with a small enough rank. The matrix product B*A gives a matrix of shape (input_size, input_size) so no information is lost but the model will have learned a new representation through training.
+
+For any application, we only need to initialize the matrices, freeze SAM and train the adapter so that the frozen model + LoRA learns to segment anythings that you need.
+</details>
+
 # Reference
 
 1. [How To Fine-Tune Segment Anything](https://encord.com/blog/learn-how-to-fine-tune-the-segment-anything-model-sam/)
@@ -31,3 +37,6 @@ Fine tuning is desirable so that we can obtain better performance on our specifi
 5. https://github.com/SysCV/sam-hq
 6. https://github.com/luca-medeiros/lightning-sam
 7. https://colab.research.google.com/drive/1F6uRommb3GswcRlPZWpkAQRMVNdVH7Ww?usp=sharing#scrollTo=J9fZiPoIKXYW
+8. https://github.com/NielsRogge/Transformers-Tutorials/tree/master/SAM
+9. https://github.com/JamesQFreeman/Sam_LoRA
+10. https://github.com/JamesQFreeman/LoRA-ViT
