@@ -1,5 +1,7 @@
 # Introduction
 
+![](./assets/home.png)
+
 Computer vision is having its ChatGPT moment with the release of the Segment Anything Model (SAM) by Meta last week. Trained over 11 billion segmentation masks, SAM is a foundation model for predictive AI use cases rather than generative AI. While it has shown an incredible amount of flexibility in its ability to segment over wide-ranging image modalities and problem spaces, it was released without “fine-tuning” functionality.
 
 <details> <summary>What is the Segment Anything Model (SAM)?</summary>
