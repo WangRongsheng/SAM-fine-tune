@@ -51,7 +51,7 @@ Some dependencies are not loaded with the poetry install, so I added them manual
 poetry run pip install --upgrade torch torchvision gradio safetensors opencv-python monai
 ```
 
-Download the image encoder checkpoint (vit-b)
+Download the image encoder checkpoint (`only support vit-b`)
 ```bash
 wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
 ```
