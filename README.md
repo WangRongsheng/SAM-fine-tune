@@ -77,4 +77,5 @@ poetry run python train.py
 8. https://github.com/NielsRogge/Transformers-Tutorials/tree/master/SAM
 9. https://github.com/JamesQFreeman/Sam_LoRA
 10. https://github.com/JamesQFreeman/LoRA-ViT
-11. https://github.com/facebookresearch/segment-anything
+11. https://github.com/MathieuNlp/Sam_LoRA
+12. https://github.com/facebookresearch/segment-anything
