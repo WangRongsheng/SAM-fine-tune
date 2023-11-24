@@ -28,6 +28,43 @@ LoRA is an adapter that is using 2 matrices B and A. The 2 matrices have specifi
 For any application, we only need to initialize the matrices, freeze SAM and train the adapter so that the frozen model + LoRA learns to segment anythings that you need.
 </details>
 
+## Setup
+The project use python poetry.
+
+```bash
+pip install poetry
+```
+
+To install the dependencies use:
+```bash
+poetry config virtualenvs.in-project false
+```
+
+```bash
+poetry install --all-extras
+```
+
+Some dependencies are not loaded with the poetry install, so I added them manually.
+```bash
+poetry run pip install --upgrade torch torchvision gradio safetensors opencv-python monai
+```
+
+Download the image encoder checkpoint (vit-b)
+```bash
+wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
+```
+
+## Train
+Configure the model and paths in the configuration file:
+```bash
+config.yaml
+```
+
+To run the training, use:
+```bash
+poetry run python train.py
+```
+
 # Reference
 
 1. [How To Fine-Tune Segment Anything](https://encord.com/blog/learn-how-to-fine-tune-the-segment-anything-model-sam/)
