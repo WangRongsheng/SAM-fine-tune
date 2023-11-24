@@ -1,0 +1,13 @@
+DATASET:
+  TRAIN_PATH: "./dataset/inbreast-mass/train"
+  TEST_PATH: "./dataset/inbreast-mass/test"
+  IMAGE_FORMAT: ".png"
+
+SAM:
+  CHECKPOINT: "./sam_vit_b_01ec64.pth"
+  RANK: 512
+
+TRAIN:
+  BATCH_SIZE: 1
+  NUM_EPOCHS: 50
+  LEARNING_RATE: 1e-4

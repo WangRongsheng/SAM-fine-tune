@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "sam-lora-poetry"
+version = "0.1.0"
+description = ""
+authors = ["WangRongsheng <wrs6@88.com>"]
+readme = "README.md"
+packages = [{include = "sam_lora_poetry"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+pendulum = "^2.1.2"
+numpy = "^1.26.0"
+matplotlib = "^3.8.0"
+torchvision = "^0.15.2"
+statistics = "^1.0.3.5"
+tqdm = "^4.66.1"
+monai = "^1.2.0"
+pillow = "^10.0.1"
+safetensors = "^0.3.3"
+opencv-python = "^4.8.0.76"
+pyyaml = "^6.0.1"
+gradio = "^3.44.3"
+torch = "2.0.1"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
