@@ -81,3 +81,4 @@ poetry run python train.py
 10. https://github.com/JamesQFreeman/LoRA-ViT
 11. https://github.com/MathieuNlp/Sam_LoRA
 12. https://github.com/facebookresearch/segment-anything
+13. https://github.com/tianrun-chen/SAM-Adapter-PyTorch
