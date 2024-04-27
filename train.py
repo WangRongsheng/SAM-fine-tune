@@ -15,6 +15,7 @@ from src.lora import LoRA_sam
 import matplotlib.pyplot as plt
 import yaml
 import torch.nn.functional as F
+from src.metrics import calculate_iou
 """
 This file is used to train a LoRA_sam model. I use that monai DiceLoss for the training. The batch size and number of epochs are taken from the configuration file.
 The model is saved at the end as a safetensor.
@@ -40,12 +41,15 @@ optimizer = Adam(model.image_encoder.parameters(), lr=config_file["TRAIN"]["LEAR
 seg_loss = monai.losses.DiceCELoss(sigmoid=True, squared_pred=True, reduction='mean')
 num_epochs = config_file["TRAIN"]["NUM_EPOCHS"]
 
+threshold_iou = config_file["TRAIN"]["THR_IOU"]
+
 device = "cuda" if torch.cuda.is_available() else "cpu"
 # Set model to train and into the device
 model.train()
 model.to(device)
 
 total_loss = []
+iou_metrics = []
 
 for epoch in range(num_epochs):
     epoch_losses = []
@@ -66,8 +70,13 @@ for epoch in range(num_epochs):
       optimizer.step()
       epoch_losses.append(loss.item())
 
+      # эти строчки я добавил
+      iou = calculate_iou(stk_out, stk_gt.int().to(device), thr=threshold_iou)
+      iou_metrics.append(iou)
+
     print(f'EPOCH: {epoch}')
     print(f'Mean loss training: {mean(epoch_losses)}')
+    print(f'IoU Train: {mean(iou_metrics)}')
 
 # Save the parameters of the model in safetensors format
 rank = config_file["SAM"]["RANK"]
