@@ -41,7 +41,9 @@ if val_dataset_path:
 # Create a dataloader
 train_dataloader = DataLoader(train_ds, batch_size=config_file["TRAIN"]["BATCH_SIZE"], shuffle=True, collate_fn=collate_fn)
 if val_dataset_path:
-  val_dataloader = DataLoader(val_ds, batch_size=config_file["TRAIN"]["BATCH_SIZE"], shuffle=True, collate_fn=collate_fn)
+  val_dataloader = DataLoader(val_ds, batch_size=config_file["VAL"]["BATCH_SIZE"] if config_file.get("VAL") else config_file["TRAIN"]["BATCH_SIZE"],
+                              shuffle=True,
+                              collate_fn=collate_fn)
 # Initialize optimize and Loss
 optimizer = Adam(model.image_encoder.parameters(), lr=config_file["TRAIN"]["LEARNING_RATE"], weight_decay=0)
 seg_loss = monai.losses.DiceCELoss(sigmoid=True, squared_pred=True, reduction='mean')
