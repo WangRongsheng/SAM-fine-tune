@@ -31,6 +31,7 @@ For any application, we only need to initialize the matrices, freeze SAM and tra
 </details>
 
 ## Setup
+
 The project use python poetry.
 
 ```bash
