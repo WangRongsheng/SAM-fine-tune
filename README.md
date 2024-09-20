@@ -44,6 +44,7 @@ export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring
 ```
 
 To install the dependencies use:
+
 ```bash
 poetry config virtualenvs.in-project false
 ```
@@ -53,6 +54,7 @@ poetry install --all-extras
 ```
 
 Some dependencies are not loaded with the poetry install, so I added them manually.
+
 ```bash
 poetry run pip install --upgrade torch torchvision gradio safetensors opencv-python monai
 ```
