@@ -63,10 +63,12 @@ wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
 ```
 
 ## Notes on the Data
+
 - The script expects all of the images to have the same amount of channels (all RGB, all Grayscale, etc) and no alpha channel (transparency).
 - SAM will resize the longest side of all input images to 1024px.
 
 ## Train
+
 Configure the model and paths in the configuration file:
 ```bash
 config.yaml
