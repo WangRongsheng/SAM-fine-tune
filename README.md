@@ -98,3 +98,4 @@ poetry run python train.py
 12. https://github.com/facebookresearch/segment-anything
 13. https://github.com/tianrun-chen/SAM-Adapter-PyTorch
 14. https://github.com/ziqi-jin/finetune-anything
+15. https://github.com/mazurowski-lab/finetune-SAM
